@@ -13,7 +13,10 @@ namespace Com.Piap.IndexManage.Service {
     /// 指标领域类
     /// </summary>
     public class IndexService : IIndexService {
-        private IIndexPersist indexPersist;
+        /// <summary>
+        /// 
+        /// </summary>
+        public IIndexPersist indexPersist { set; get; }
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +31,7 @@ namespace Com.Piap.IndexManage.Service {
         /// <param name="index"></param>
         /// <returns></returns>
         public bool CreateIndex(Index index) {
-            return indexPersist.CreateIndex(index);
+            return indexPersist.Create(index);
         }
 
         /// <summary>
@@ -36,7 +39,7 @@ namespace Com.Piap.IndexManage.Service {
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public bool Modify(model.Index index) {
+        public bool Modify(Index index) {
             return indexPersist.Modify(index);
         }
 
@@ -45,7 +48,7 @@ namespace Com.Piap.IndexManage.Service {
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public bool Remove(model.Index index) {
+        public bool Remove(Index index) {
             return indexPersist.Remove(index);
         }
     }

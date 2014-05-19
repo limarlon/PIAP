@@ -39,11 +39,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\ActionType.cs" />
+    <Compile Include="Model\BaseTable.cs" />
+    <Compile Include="Model\Menu.cs" />
+    <Compile Include="Model\Privilege.cs" />
+    <Compile Include="Model\ProtectedObject.cs" />
+    <Compile Include="Model\Subject.cs" />
+    <Compile Include="Model\Module.cs" />
+    <Compile Include="Model\Operation.cs" />
+    <Compile Include="Model\Permission.cs" />
+    <Compile Include="Model\Resource.cs" />
+    <Compile Include="Model\ResourceType.cs" />
+    <Compile Include="Model\Role.cs" />
+    <Compile Include="Model\URL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="IService\" />
-    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

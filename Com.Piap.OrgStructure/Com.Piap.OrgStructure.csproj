@@ -39,12 +39,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\BaseTable.cs" />
+    <Compile Include="Model\Department.cs" />
+    <Compile Include="Model\DeptInOrg.cs" />
+    <Compile Include="Model\Organization.cs" />
+    <Compile Include="Model\Post.cs" />
+    <Compile Include="Model\PostInDept.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserInDept.cs" />
+    <Compile Include="Model\WorkGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="IPersist\" />
     <Folder Include="IService\" />
-    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -16,7 +16,7 @@ namespace Com.Piap.IndexManage.IService {
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        Boolean CreateIndex(Index index);
+        Boolean Create(Index index);
 
         /// <summary>
         /// 修改
