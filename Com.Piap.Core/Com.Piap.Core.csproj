@@ -39,6 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dapper\ConnectionFactory.cs" />
+    <Compile Include="Dapper\SqlMapper.cs" />
+    <Compile Include="Petapoco\Database.cs" />
+    <Compile Include="Petapoco\OracleProvider.cs" />
+    <Compile Include="Petapoco\PetaPoco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

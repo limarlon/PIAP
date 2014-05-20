@@ -57,6 +57,9 @@
   <ItemGroup>
     <Folder Include="IService\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Docs\权限管理.doc" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

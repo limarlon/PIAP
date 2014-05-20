@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IPersist\IDirectionPersist.cs" />
+    <Compile Include="IService\IDirectionService.cs" />
     <Compile Include="IService\IIndexService.cs" />
     <Compile Include="IPersist\IIndexPersist.cs" />
     <Compile Include="Model\Category.cs" />
@@ -46,8 +48,10 @@
     <Compile Include="Model\Direction.cs" />
     <Compile Include="Model\Index.cs" />
     <Compile Include="Model\IndexInstance.cs" />
+    <Compile Include="Persist\DirectionPersist.cs" />
     <Compile Include="Persist\IndexPersist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\DirectionService.cs" />
     <Compile Include="Service\IndexService.cs" />
   </ItemGroup>
   <ItemGroup />
