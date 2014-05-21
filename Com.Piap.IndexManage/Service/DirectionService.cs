@@ -7,10 +7,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Com.Piap.IndexManage.IService;
 using Com.Piap.IndexManage.Model;
 using Com.Piap.IndexManage.IPersist;
+using Com.Piap.IndexManage.Persist;
 
 namespace Com.Piap.IndexManage.Service {
     
@@ -23,7 +23,7 @@ namespace Com.Piap.IndexManage.Service {
         /// <summary>
         /// 持久层接口依赖
         /// </summary>
-        public IDirectionPersist persist { set; get; } 
+        public IDirectionPersist persist = new DirectionPersist();
 
         public bool Create(Direction direction) {
             return persist.Create(direction);

@@ -12,17 +12,16 @@ namespace Com.Piap.IndexManage.Service {
     /// <summary>
     /// 指标领域类
     /// </summary>
-    public class IndexService : IIndexService {
+    public class IndexService {
         /// <summary>
         /// 
         /// </summary>
-        public IIndexPersist indexPersist { set; get; }
+        private IIndexPersist indexPersist { set; get; }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="index_persist"></param>
-        public IndexService(IIndexPersist index_persist) {
-            this.indexPersist = index_persist;
+        public IndexService() {
         }
 
         /// <summary>

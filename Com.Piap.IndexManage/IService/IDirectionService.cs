@@ -16,40 +16,40 @@ namespace Com.Piap.IndexManage.IService {
     /// 业务接口
     /// 分类方向
     /// </summary>
-    interface IDirectionService {
+    public interface IDirectionService {
 
         /// <summary>
         /// 创建一个分类方向
         /// </summary>
         /// <param name="direction">创建对象</param>
         /// <returns></returns>
-        public bool Create(model.Direction direction);
+        bool Create(model.Direction direction);
 
         /// <summary>
         /// 修改一个分类方向
         /// </summary>
         /// <param name="direction"></param>
         /// <returns></returns>
-        public bool Modify(model.Direction direction);
+        bool Modify(model.Direction direction);
 
         /// <summary>
         /// 移除一个分类方向
         /// </summary>
         /// <param name="direction"></param>
         /// <returns></returns>
-        public bool Remove(model.Direction direction);
+        bool Remove(model.Direction direction);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="Code"></param>
         /// <returns></returns>
-        public model.Direction GetByCode(string Code);
+        model.Direction GetByCode(string Code);
 
         /// <summary>
         /// 获取所有分类方向
         /// </summary>
         /// <returns></returns>
-        public List<model.Direction> GetAll();
+        List<model.Direction> GetAll();
     }
 }

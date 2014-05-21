@@ -49,12 +49,18 @@
     <Compile Include="Model\Index.cs" />
     <Compile Include="Model\IndexInstance.cs" />
     <Compile Include="Persist\DirectionPersist.cs" />
+    <Compile Include="Persist\IndexManageContext.cs" />
     <Compile Include="Persist\IndexPersist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\DirectionService.cs" />
     <Compile Include="Service\IndexService.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Com.Piap.Core\Com.Piap.Core.csproj">
+      <Project>{46f1e30a-fe09-4d05-93ed-ce28b300a8e4}</Project>
+      <Name>Com.Piap.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
