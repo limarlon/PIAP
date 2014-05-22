@@ -115,6 +115,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\IndexManage\Models\" />
     <Folder Include="Areas\IndexManage\Views\Shared\" />
+    <Folder Include="Areas\OrgStructure\Models\" />
+    <Folder Include="Areas\OrgStructure\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +140,9 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Areas\IndexManage\Controllers\DirectionController.cs" />
     <Compile Include="Areas\IndexManage\IndexManageAreaRegistration.cs" />
+    <Compile Include="Areas\OrgStructure\Controllers\DeptController.cs" />
+    <Compile Include="Areas\OrgStructure\Controllers\UserController.cs" />
+    <Compile Include="Areas\OrgStructure\OrgStructureAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -383,6 +388,9 @@
     <Content Include="Areas\IndexManage\Views\Direction\Index.cshtml" />
     <Content Include="Content\kendostyle\images\kendoui.ttf" />
     <Content Include="Content\kendostyle\images\kendoui.woff" />
+    <Content Include="Areas\OrgStructure\Views\web.config" />
+    <Content Include="Areas\OrgStructure\Views\User\Index.cshtml" />
+    <Content Include="Areas\OrgStructure\Views\Dept\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
