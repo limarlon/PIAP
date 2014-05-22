@@ -4,52 +4,48 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using model = Com.Piap.IndexManage.Model;
-/**/
-namespace Com.Piap.IndexManage.IService {
-    /// <summary>
-    /// 指标领域接口
-    /// </summary>
-    public interface IIndexService {
 
+namespace Com.Piap.IndexManage.IPersist {
+    public interface IClassificationPersist {
         /// <summary>
-        /// 创建类目
+        /// 创建分类
         /// </summary>
         /// <param name="direction">创建对象</param>
         /// <returns></returns>
-        bool Create(model.Index index);
+        bool Create(model.Classification classification);
 
         /// <summary>
-        /// 修改类目
+        /// 修改分类
         /// </summary>
         /// <param name="direction"></param>
         /// <returns></returns>
-        bool Modify(model.Index index);
+        bool Modify(model.Classification classification);
 
         /// <summary>
-        /// 移除类目
+        /// 移除分类
         /// </summary>
         /// <param name="direction"></param>
         /// <returns></returns>
-        bool Remove(model.Index index);
+        bool Remove(model.Classification classification);
 
         /// <summary>
-        /// 删除类目
+        /// 删除分类
         /// </summary>
         /// <param name="direction"></param>
         /// <returns></returns>
-        bool Delete(model.Index index);
+        bool Delete(model.Classification classification);
 
         /// <summary>
-        /// 获取某类目
+        /// 获取某分类
         /// </summary>
         /// <param name="Code"></param>
         /// <returns></returns>
-        model.Index GetByCode(string code);
+        model.Classification GetByCode(string code);
 
         /// <summary>
-        /// 获取所有类目
+        /// 获取所有分类方向
         /// </summary>
         /// <returns></returns>
-        List<model.Index> GetAll();
+        List<model.Classification> GetAll();
     }
 }

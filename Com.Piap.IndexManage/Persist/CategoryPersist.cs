@@ -9,15 +9,15 @@ using Com.Piap.IndexManage.IPersist;
 using PetaPoco;
 
 namespace Com.Piap.IndexManage.Persist {
-    public class IndexPersist : IIndexPersist {
+    public class CategoryPersist : ICategoryPersist {
         private PetaPoco.Database db = new Database("database");
-        private readonly string TableName = "Index";
+        private readonly string TableName = "Category";
         private readonly string PKName = "Code";
 
-        public bool Create(Index index) {
+        public bool Create(Category category) {
             bool SUCESS = true;
             try {
-                db.Insert(index);
+                db.Insert(category);
             }
             catch {
                 SUCESS = false;
@@ -25,10 +25,10 @@ namespace Com.Piap.IndexManage.Persist {
             return SUCESS;
         }
 
-        public bool Modify(Index index) {
+        public bool Modify(Category category) {
             bool SUCESS = true;
             try {
-                db.Update(TableName, PKName, index);
+                db.Update(TableName, PKName, category);
             }
             catch {
                 SUCESS = false;
@@ -36,12 +36,12 @@ namespace Com.Piap.IndexManage.Persist {
             return SUCESS;
         }
 
-        public bool Remove(Index index) {
+        public bool Remove(Category category) {
             bool SUCESS = true;
             try {
-                index.Enable = false;
-                index.Deleted = true;
-                db.Update(TableName, PKName, index);
+                category.Enable = false;
+                category.Deleted = true;
+                db.Update(TableName, PKName, category);
             }
             catch {
                 SUCESS = false;
@@ -49,10 +49,10 @@ namespace Com.Piap.IndexManage.Persist {
             return SUCESS;
         }
 
-        public bool Delete(Index index) {
+        public bool Delete(Category category) {
             bool SUCESS = true;
             try {
-                db.Delete<Index>(index);
+                db.Delete<Category>(category);
             }
             catch {
                 SUCESS = false;
@@ -60,12 +60,12 @@ namespace Com.Piap.IndexManage.Persist {
             return SUCESS;
         }
 
-        public Index GetByCode(string code) {
-            return db.Query<Index>("SELECT * FROM " + TableName + " WHERE " + PKName + "='" + code + "' ").SingleOrDefault<Index>();
+        public Category GetByCode(string code) {
+            return db.Query<Category>("SELECT * FROM " + TableName + " WHERE " + PKName + "='" + code + "' ").SingleOrDefault<Category>();
         }
 
-        public List<Index> GetAll() {
-            return db.Query<Index>("SELECT * FROM " + TableName + " ").ToList<Index>();
+        public List<Category> GetAll() {
+            return db.Query<Category>("SELECT * FROM " + TableName + " ").ToList<Category>();
         }
     }
 }

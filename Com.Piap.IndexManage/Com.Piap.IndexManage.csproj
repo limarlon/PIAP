@@ -39,7 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IPersist\ICategoryPersist.cs" />
+    <Compile Include="IPersist\IClassificationPersist.cs" />
     <Compile Include="IPersist\IDirectionPersist.cs" />
+    <Compile Include="IService\ICategoryService.cs" />
+    <Compile Include="IService\IClassificationService.cs" />
     <Compile Include="IService\IDirectionService.cs" />
     <Compile Include="IService\IIndexService.cs" />
     <Compile Include="IPersist\IIndexPersist.cs" />
@@ -48,10 +52,14 @@
     <Compile Include="Model\Direction.cs" />
     <Compile Include="Model\Index.cs" />
     <Compile Include="Model\IndexInstance.cs" />
+    <Compile Include="Persist\CategoryPersist.cs" />
+    <Compile Include="Persist\ClassificationPersist.cs" />
     <Compile Include="Persist\DirectionPersist.cs" />
     <Compile Include="Persist\IndexManageContext.cs" />
     <Compile Include="Persist\IndexPersist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\CategoryService.cs" />
+    <Compile Include="Service\ClassificationService.cs" />
     <Compile Include="Service\DirectionService.cs" />
     <Compile Include="Service\IndexService.cs" />
   </ItemGroup>
@@ -62,6 +70,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Model\sql\dbo.Index.sql" />
+    <Content Include="Model\sql\dbo.Category.sql" />
+    <Content Include="Model\sql\dbo.Classification.sql" />
     <Content Include="Model\sql\dbo.Direction.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

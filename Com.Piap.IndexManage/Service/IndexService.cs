@@ -5,50 +5,40 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Com.Piap.IndexManage.IService;
-using Com.Piap.IndexManage.IPersist;
 using Com.Piap.IndexManage.Model;
+using Com.Piap.IndexManage.IPersist;
+using Com.Piap.IndexManage.Persist;
 
 namespace Com.Piap.IndexManage.Service {
     /// <summary>
     /// 指标领域类
     /// </summary>
-    public class IndexService {
-        /// <summary>
-        /// 
-        /// </summary>
-        private IIndexPersist indexPersist { set; get; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="index_persist"></param>
-        public IndexService() {
+    public class IndexService : IIndexService {
+        private IIndexPersist persist = new IndexPersist();
+
+
+        public bool Create(Index index) {
+            return persist.Create(index);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="index"></param>
-        /// <returns></returns>
-        public bool CreateIndex(Index index) {
-            return indexPersist.Create(index);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="index"></param>
-        /// <returns></returns>
         public bool Modify(Index index) {
-            return indexPersist.Modify(index);
+            return persist.Modify(index);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="index"></param>
-        /// <returns></returns>
         public bool Remove(Index index) {
-            return indexPersist.Remove(index);
+            return persist.Remove(index);
+        }
+
+        public bool Delete(Index index) {
+            return persist.Delete(index);
+        }
+
+        public Index GetByCode(string code) {
+            return persist.GetByCode(code);
+        }
+
+        public List<Index> GetAll() {
+            return persist.GetAll();
         }
     }
 }

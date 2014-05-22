@@ -11,22 +11,21 @@ using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
 
 namespace Com.Piap.Web.Areas.IndexManage.Controllers {
-    public class DirectionController : Controller {
-        public IService.IDirectionService directionService = new Service.DirectionService();
+    public class IndexController : Controller {
+        public IService.IIndexService indexService = new Service.IndexService();
         //
-        // GET: /IndexManage/Direction/
+        // GET: /IndexManage/Index/
         public ActionResult Index() {
             return View();
         }
 
-        // GET: /IndexManage/Direction/All
         /// <summary>
         /// 查询所有数据
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
         public JsonResult All([DataSourceRequest]DataSourceRequest request) {
-            List<Model.Direction> list = directionService.GetAll();
+            List<Model.Index> list = indexService.GetAll();
             return Json(list.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
@@ -39,13 +38,13 @@ namespace Com.Piap.Web.Areas.IndexManage.Controllers {
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Create(
             [DataSourceRequest] DataSourceRequest request,
-            [Bind(Prefix = "models")]IEnumerable<Model.Direction> directions) {
-            if (directions != null && ModelState.IsValid) {
-                foreach (var direction in directions) {
-                    directionService.Create(direction);
+            [Bind(Prefix = "models")]IEnumerable<Model.Index> indexs) {
+                if (indexs != null && ModelState.IsValid) {
+                    foreach (var index in indexs) {
+                        indexService.Create(index);
                 }
             }
-            return Json(directions.ToDataSourceResult(request, ModelState));
+                return Json(indexs.ToDataSourceResult(request, ModelState));
         }
 
         /// <summary>
@@ -55,13 +54,13 @@ namespace Com.Piap.Web.Areas.IndexManage.Controllers {
         /// <param name="directions"></param>
         /// <returns></returns>
         public ActionResult Remove([DataSourceRequest] DataSourceRequest request,
-            [Bind(Prefix = "models")]IEnumerable<Model.Direction> directions) {
-            if (directions != null && ModelState.IsValid) {
-                foreach (var direction in directions) {
-                    directionService.Remove(direction);
+            [Bind(Prefix = "models")]IEnumerable<Model.Index> indexs) {
+                if (indexs != null && ModelState.IsValid) {
+                    foreach (var index in indexs) {
+                        indexService.Remove(index);
                 }
             }
-            return Json(directions.ToDataSourceResult(request, ModelState));
+                return Json(indexs.ToDataSourceResult(request, ModelState));
         }
 
         /// <summary>
@@ -71,13 +70,13 @@ namespace Com.Piap.Web.Areas.IndexManage.Controllers {
         /// <param name="directions"></param>
         /// <returns></returns>
         public ActionResult Delete([DataSourceRequest] DataSourceRequest request,
-            [Bind(Prefix = "models")]IEnumerable<Model.Direction> directions) {
-            if (directions != null && ModelState.IsValid) {
-                foreach (var direction in directions) {
-                    directionService.Delete(direction);
+            [Bind(Prefix = "models")]IEnumerable<Model.Index> indexs) {
+                if (indexs != null && ModelState.IsValid) {
+                    foreach (var index in indexs) {
+                        indexService.Delete(index);
                 }
             }
-            return Json(directions.ToDataSourceResult(request, ModelState));
+                return Json(indexs.ToDataSourceResult(request, ModelState));
         }
 
         /// <summary>
@@ -87,13 +86,13 @@ namespace Com.Piap.Web.Areas.IndexManage.Controllers {
         /// <param name="directions"></param>
         /// <returns></returns>
         public ActionResult Modify([DataSourceRequest] DataSourceRequest request,
-            [Bind(Prefix = "models")]IEnumerable<Model.Direction> directions) {
-            if (directions != null && ModelState.IsValid) {
-                foreach (var direction in directions) {
-                    directionService.Modify(direction);
+            [Bind(Prefix = "models")]IEnumerable<Model.Index> indexs) {
+                if (indexs != null && ModelState.IsValid) {
+                    foreach (var index in indexs) {
+                        indexService.Modify(index);
                 }
             }
-            return Json(directions.ToDataSourceResult(request, ModelState));
+                return Json(indexs.ToDataSourceResult(request, ModelState));
         }
 
     }

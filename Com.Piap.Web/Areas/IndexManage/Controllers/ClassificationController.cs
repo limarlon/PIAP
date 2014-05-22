@@ -11,22 +11,22 @@ using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
 
 namespace Com.Piap.Web.Areas.IndexManage.Controllers {
-    public class DirectionController : Controller {
-        public IService.IDirectionService directionService = new Service.DirectionService();
+    public class ClassificationController : Controller {
+        public IService.IClassificationService classificationService = new Service.ClassificationService();
+
         //
-        // GET: /IndexManage/Direction/
+        // GET: /IndexManage/Classification/
         public ActionResult Index() {
             return View();
         }
 
-        // GET: /IndexManage/Direction/All
         /// <summary>
         /// 查询所有数据
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
         public JsonResult All([DataSourceRequest]DataSourceRequest request) {
-            List<Model.Direction> list = directionService.GetAll();
+            List<Model.Classification> list = classificationService.GetAll();
             return Json(list.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
@@ -39,13 +39,13 @@ namespace Com.Piap.Web.Areas.IndexManage.Controllers {
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Create(
             [DataSourceRequest] DataSourceRequest request,
-            [Bind(Prefix = "models")]IEnumerable<Model.Direction> directions) {
-            if (directions != null && ModelState.IsValid) {
-                foreach (var direction in directions) {
-                    directionService.Create(direction);
+            [Bind(Prefix = "models")]IEnumerable<Model.Classification> classifications) {
+                if (classifications != null && ModelState.IsValid) {
+                    foreach (var classification in classifications) {
+                        classificationService.Create(classification);
                 }
             }
-            return Json(directions.ToDataSourceResult(request, ModelState));
+            return Json(classifications.ToDataSourceResult(request, ModelState));
         }
 
         /// <summary>
@@ -55,13 +55,13 @@ namespace Com.Piap.Web.Areas.IndexManage.Controllers {
         /// <param name="directions"></param>
         /// <returns></returns>
         public ActionResult Remove([DataSourceRequest] DataSourceRequest request,
-            [Bind(Prefix = "models")]IEnumerable<Model.Direction> directions) {
-            if (directions != null && ModelState.IsValid) {
-                foreach (var direction in directions) {
-                    directionService.Remove(direction);
+            [Bind(Prefix = "models")]IEnumerable<Model.Classification> classifications) {
+                if (classifications != null && ModelState.IsValid) {
+                    foreach (var classification in classifications) {
+                        classificationService.Remove(classification);
                 }
             }
-            return Json(directions.ToDataSourceResult(request, ModelState));
+            return Json(classifications.ToDataSourceResult(request, ModelState));
         }
 
         /// <summary>
@@ -71,13 +71,13 @@ namespace Com.Piap.Web.Areas.IndexManage.Controllers {
         /// <param name="directions"></param>
         /// <returns></returns>
         public ActionResult Delete([DataSourceRequest] DataSourceRequest request,
-            [Bind(Prefix = "models")]IEnumerable<Model.Direction> directions) {
-            if (directions != null && ModelState.IsValid) {
-                foreach (var direction in directions) {
-                    directionService.Delete(direction);
+            [Bind(Prefix = "models")]IEnumerable<Model.Classification> classifications) {
+                if (classifications != null && ModelState.IsValid) {
+                    foreach (var classification in classifications) {
+                        classificationService.Delete(classification);
                 }
             }
-            return Json(directions.ToDataSourceResult(request, ModelState));
+                return Json(classifications.ToDataSourceResult(request, ModelState));
         }
 
         /// <summary>
@@ -87,14 +87,13 @@ namespace Com.Piap.Web.Areas.IndexManage.Controllers {
         /// <param name="directions"></param>
         /// <returns></returns>
         public ActionResult Modify([DataSourceRequest] DataSourceRequest request,
-            [Bind(Prefix = "models")]IEnumerable<Model.Direction> directions) {
-            if (directions != null && ModelState.IsValid) {
-                foreach (var direction in directions) {
-                    directionService.Modify(direction);
+            [Bind(Prefix = "models")]IEnumerable<Model.Classification> classifications) {
+                if (classifications != null && ModelState.IsValid) {
+                    foreach (var classification in classifications) {
+                        classificationService.Modify(classification);
                 }
             }
-            return Json(directions.ToDataSourceResult(request, ModelState));
+                return Json(classifications.ToDataSourceResult(request, ModelState));
         }
-
     }
 }

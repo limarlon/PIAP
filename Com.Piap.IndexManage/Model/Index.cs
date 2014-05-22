@@ -10,7 +10,7 @@ namespace Com.Piap.IndexManage.Model {
     /// </summary>
     public class Index {
         /// <summary>
-        /// 
+        /// 编号
         /// </summary>
         public string Id { set; get; }
         /// <summary>
@@ -29,5 +29,21 @@ namespace Com.Piap.IndexManage.Model {
         /// 分类
         /// </summary>
         public string ClassificationId { set; get; }
+        /// <summary>
+        /// 空间
+        /// </summary>
+        public string Space { set; get; }
+        /// <summary>
+        /// 备注
+        /// </summary>
+        public string Remarks { set; get; }
+        /// <summary>
+        /// 启用
+        /// </summary>
+        public bool Enable { set; get; }
+        /// <summary>
+        /// 逻辑删除
+        /// </summary>
+        public bool Deleted { set; get; }
     }
 }

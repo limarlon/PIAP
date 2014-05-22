@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>指标分类方向</title>
+    <title>指标类目</title>
     <link href="~/Content/kendostyle/kendo.common.min.css" rel="stylesheet">
     <link href="~/Content/kendostyle/kendo.rtl.min.css" rel="stylesheet">
     <link href="~/Content/kendostyle/kendo.default.min.css" rel="stylesheet">
@@ -18,22 +18,23 @@
     <script src="~/Scripts/kendoui/kendo.aspnetmvc.min.js"></script>
     <style>
         * {
-        margin:0 auto;
+            margin: 0 auto;
         }
-
     </style>
 </head>
 <body>
 
-       
-    @(Html.Kendo().Grid<Com.Piap.IndexManage.Model.Direction>()
+
+    @(Html.Kendo().Grid<Com.Piap.IndexManage.Model.Category>()
     .Name("grid")
-    .HtmlAttributes(new { style = "height: 500px; width:960px;margin-top:30px;" })
+    .HtmlAttributes(new { style = "height: 500px; width:1000px;margin-top:30px;" })
     .Columns(columns => {
         columns.Bound(p => p.Id).Width(100).Title("编号");
-        columns.Bound(p => p.Code).Width(120).Title("代码");
-        columns.Bound(p => p.Name).Width(180).Title("名称");
-        columns.Bound(p => p.Remarks).Width(210).Title("备注");
+        columns.Bound(p => p.Code).Width(100).Title("代码");
+        columns.Bound(p => p.Name).Width(120).Title("名称");
+        columns.Bound(p => p.DirectionId).Width(120).Title("分类方向");
+        columns.Bound(p => p.ClassificationId).Width(120).Title("分类");
+        columns.Bound(p => p.Remarks).Width(120).Title("备注");
         columns.Bound(p => p.Enable).Width(100).Title("启停");
         columns.Bound(p => p.Deleted).Width(100).Title("删除");
         columns.Command(command => command.Destroy());
@@ -59,12 +60,12 @@
         .PageSize(20)
         .ServerOperation(false)
         .Model(model => model.Id(p => p.Id))
-        .Create("Create", "Direction")
-        .Read("All", "Direction")
-        .Update("Modify", "Direction")
-        .Destroy("Delete", "Direction")
+                        .Create("Create", "Category")
+                        .Read("All", "Category")
+                        .Update("Modify", "Category")
+                        .Destroy("Delete", "Category")
     )
-)    
+    )
 
 
 
