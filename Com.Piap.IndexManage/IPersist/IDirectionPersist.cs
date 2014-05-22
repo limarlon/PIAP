@@ -42,6 +42,12 @@ namespace Com.Piap.IndexManage.IPersist {
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="direction"></param>
+        /// <returns></returns>
+        bool Delete(model.Direction direction);
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="Code"></param>
         /// <returns></returns>
         model.Direction GetByCode(string Code);

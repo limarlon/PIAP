@@ -39,6 +39,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>D:\Program Files\Telerik\UI for ASP.NET MVC Q1 2014\wrappers\aspnetmvc\Binaries\Mvc5\Kendo.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Kendo.Mvc.resources">
+      <HintPath>D:\Program Files\Telerik\UI for ASP.NET MVC Q1 2014\wrappers\aspnetmvc\Binaries\Mvc5\zh-CN\Kendo.Mvc.resources.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -387,7 +393,13 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\kendoui\jquery.min.js" />
+    <None Include="Scripts\kendoui\kendo.all-vsdoc.js" />
+    <None Include="Scripts\kendoui\kendo.all.min.intellisense.js" />
+    <Content Include="Scripts\kendoui\kendo.all.min.js" />
+    <Content Include="Scripts\kendoui\kendo.aspnetmvc.min.js" />
+    <Content Include="Scripts\kendoui\kendo.culture.zh-CHS.min.js" />
     <Content Include="Scripts\kendoui\kendo.culture.zh-CN.min.js" />
+    <Content Include="Scripts\kendoui\kendo.culture.zh-Hans.min.js" />
     <Content Include="Scripts\kendoui\kendo.web.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />

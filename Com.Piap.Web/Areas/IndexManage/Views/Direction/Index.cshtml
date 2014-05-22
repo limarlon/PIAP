@@ -1,4 +1,4 @@
-﻿
+﻿@using Kendo.Mvc.UI
 @{
     Layout = null;
 }
@@ -15,72 +15,57 @@
 
     <script src="~/Scripts/kendoui/jquery.min.js"></script>
     <script src="~/Scripts/kendoui/kendo.web.min.js"></script>
-    <script>
+    <script src="~/Scripts/kendoui/kendo.aspnetmvc.min.js"></script>
+    <style>
+        * {
+        margin:0 auto;
+        }
 
-    </script>
+    </style>
 </head>
 <body>
 
+       
+    @(Html.Kendo().Grid<Com.Piap.IndexManage.Model.Direction>()
+    .Name("grid")
+    .HtmlAttributes(new { style = "height: 500px; width:960px;margin-top:30px;" })
+    .Columns(columns => {
+        columns.Bound(p => p.Id).Width(100).Title("编号");
+        columns.Bound(p => p.Code).Width(120).Title("代码");
+        columns.Bound(p => p.Name).Width(180).Title("名称");
+        columns.Bound(p => p.Remarks).Width(210).Title("备注");
+        columns.Bound(p => p.Enable).Width(100).Title("启停");
+        columns.Bound(p => p.Deleted).Width(100).Title("删除");
+        columns.Command(command => command.Destroy());
+    })
+    .ToolBar(toolbar => {
+        toolbar.Create();
+        toolbar.Save();
+    })
+    .Editable(editable => editable.Mode(Kendo.Mvc.UI.GridEditMode.InCell))
+    .Pageable()
+    .Navigatable()
+    .Sortable()
+    .Scrollable()
+    .Filterable()
+    .Pageable(pageable => pageable
+        .Refresh(true)
+        .PageSizes(true)
+        .ButtonCount(5)
+     )
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Batch(true)
+        .PageSize(20)
+        .ServerOperation(false)
+        .Model(model => model.Id(p => p.Id))
+        .Create("Create", "Direction")
+        .Read("All", "Direction")
+        .Update("Modify", "Direction")
+        .Destroy("Delete", "Direction")
+    )
+)    
 
-    <div id="example" class="k-content">
-        <div id="clientsDb">
-
-            <div id="grid" style="height: 365px"></div>
-
-        </div>
-
-        <style scoped>
-            #clientsDb {
-                width: 952px;
-                height: 396px;
-                margin: 20px auto 0;
-                padding: 51px 4px 0 4px;
-                background: url('../../content/web/grid/clientsDb.png') no-repeat 0 0;
-            }
-        </style>
-        <script>
-            $(document).ready(function () {
-                $("#grid").kendoGrid({
-                    dataSource: {
-                        type: "odata",
-                        transport: {
-                            read: "http://demos.telerik.com/kendo-ui/service/Northwind.svc/Customers"
-                        },
-                        pageSize: 10
-                    },
-                    groupable: true,
-                    sortable: true,
-                    pageable: {
-                        refresh: true,
-                        pageSizes: true,
-                        buttonCount: 5
-                    },
-                    columns: [{
-                        field: "Id",
-                        title: "编号",
-                        width: 200
-                    }, {
-                        field: "Code",
-                        title: "代码"
-                    }, {
-                        field: "Name",
-                        title: "名称"
-                    }, {
-                        field: "Remarks",
-                        title: "备注",
-                        width: 250
-                    }, {
-                        field: "Enable",
-                        title: "停用"
-                    }, {
-                        field: "Deleted",
-                        title: "删除标志",
-                        width: 150
-                    }]
-                });
-            });
-        </script>
-    </div>
 
 
 </body>
