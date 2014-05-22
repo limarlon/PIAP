@@ -15,40 +15,40 @@ namespace Com.Piap.IndexManage.IPersist {
         /// </summary>
         /// <param name="direction">创建对象</param>
         /// <returns></returns>
-        bool Create(model.Index index);
+        bool Create(model.Indexs index);
 
         /// <summary>
         /// 修改类目
         /// </summary>
         /// <param name="direction"></param>
         /// <returns></returns>
-        bool Modify(model.Index index);
+        bool Modify(model.Indexs index);
 
         /// <summary>
         /// 移除类目
         /// </summary>
         /// <param name="direction"></param>
         /// <returns></returns>
-        bool Remove(model.Index index);
+        bool Remove(model.Indexs index);
 
         /// <summary>
         /// 删除类目
         /// </summary>
         /// <param name="direction"></param>
         /// <returns></returns>
-        bool Delete(model.Index index);
+        bool Delete(model.Indexs index);
 
         /// <summary>
         /// 获取某类目
         /// </summary>
         /// <param name="Code"></param>
         /// <returns></returns>
-        model.Index GetByCode(string code);
+        model.Indexs GetByCode(string code);
 
         /// <summary>
         /// 获取所有类目
         /// </summary>
         /// <returns></returns>
-        List<model.Index> GetAll();
+        List<model.Indexs> GetAll();
     }
 }

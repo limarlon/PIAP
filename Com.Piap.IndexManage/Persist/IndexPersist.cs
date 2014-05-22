@@ -11,10 +11,10 @@ using PetaPoco;
 namespace Com.Piap.IndexManage.Persist {
     public class IndexPersist : IIndexPersist {
         private PetaPoco.Database db = new Database("database");
-        private readonly string TableName = "Index";
+        private readonly string TableName = "Indexs";
         private readonly string PKName = "Code";
 
-        public bool Create(Index index) {
+        public bool Create(Indexs index) {
             bool SUCESS = true;
             try {
                 db.Insert(index);
@@ -25,7 +25,7 @@ namespace Com.Piap.IndexManage.Persist {
             return SUCESS;
         }
 
-        public bool Modify(Index index) {
+        public bool Modify(Indexs index) {
             bool SUCESS = true;
             try {
                 db.Update(TableName, PKName, index);
@@ -36,7 +36,7 @@ namespace Com.Piap.IndexManage.Persist {
             return SUCESS;
         }
 
-        public bool Remove(Index index) {
+        public bool Remove(Indexs index) {
             bool SUCESS = true;
             try {
                 index.Enable = false;
@@ -49,10 +49,10 @@ namespace Com.Piap.IndexManage.Persist {
             return SUCESS;
         }
 
-        public bool Delete(Index index) {
+        public bool Delete(Indexs index) {
             bool SUCESS = true;
             try {
-                db.Delete<Index>(index);
+                db.Delete<Indexs>(index);
             }
             catch {
                 SUCESS = false;
@@ -60,12 +60,12 @@ namespace Com.Piap.IndexManage.Persist {
             return SUCESS;
         }
 
-        public Index GetByCode(string code) {
-            return db.Query<Index>("SELECT * FROM " + TableName + " WHERE " + PKName + "='" + code + "' ").SingleOrDefault<Index>();
+        public Indexs GetByCode(string code) {
+            return db.Query<Indexs>("SELECT * FROM " + TableName + " WHERE " + PKName + "='" + code + "' ").SingleOrDefault<Indexs>();
         }
 
-        public List<Index> GetAll() {
-            return db.Query<Index>("SELECT * FROM " + TableName + " ").ToList<Index>();
+        public List<Indexs> GetAll() {
+            return db.Query<Indexs>("SELECT * FROM dbo.[" + TableName + "] ").ToList<Indexs>();
         }
     }
 }

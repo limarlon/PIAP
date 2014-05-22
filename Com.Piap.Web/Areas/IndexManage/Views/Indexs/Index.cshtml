@@ -25,7 +25,7 @@
 <body>
 
 
-    @(Html.Kendo().Grid<Com.Piap.IndexManage.Model.Index>()
+    @(Html.Kendo().Grid<Com.Piap.IndexManage.Model.Indexs>()
     .Name("grid")
     .HtmlAttributes(new { style = "height: 500px; width:1000px;margin-top:30px;" })
     .Columns(columns => {
@@ -61,10 +61,10 @@
         .PageSize(20)
         .ServerOperation(false)
         .Model(model => model.Id(p => p.Id))
-                                .Create("Create", "Index")
-                                .Read("All", "Index")
-                                .Update("Modify", "Index")
-                                .Destroy("Delete", "Index")
+                                .Create("Create", "Indexs")
+                                .Read("All", "Indexs")
+                                .Update("Modify", "Indexs")
+                                .Destroy("Delete", "Indexs")
     )
     )
 

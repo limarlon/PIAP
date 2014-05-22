@@ -50,7 +50,7 @@
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Classification.cs" />
     <Compile Include="Model\Direction.cs" />
-    <Compile Include="Model\Index.cs" />
+    <Compile Include="Model\Indexs.cs" />
     <Compile Include="Model\IndexInstance.cs" />
     <Compile Include="Persist\CategoryPersist.cs" />
     <Compile Include="Persist\ClassificationPersist.cs" />

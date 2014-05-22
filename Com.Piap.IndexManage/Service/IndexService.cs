@@ -17,27 +17,27 @@ namespace Com.Piap.IndexManage.Service {
         private IIndexPersist persist = new IndexPersist();
 
 
-        public bool Create(Index index) {
+        public bool Create(Indexs index) {
             return persist.Create(index);
         }
 
-        public bool Modify(Index index) {
+        public bool Modify(Indexs index) {
             return persist.Modify(index);
         }
 
-        public bool Remove(Index index) {
+        public bool Remove(Indexs index) {
             return persist.Remove(index);
         }
 
-        public bool Delete(Index index) {
+        public bool Delete(Indexs index) {
             return persist.Delete(index);
         }
 
-        public Index GetByCode(string code) {
+        public Indexs GetByCode(string code) {
             return persist.GetByCode(code);
         }
 
-        public List<Index> GetAll() {
+        public List<Indexs> GetAll() {
             return persist.GetAll();
         }
     }

@@ -8,7 +8,7 @@ namespace Com.Piap.IndexManage.Model {
     /// <summary>
     /// 指标
     /// </summary>
-    public class Index {
+    public class Indexs {
         /// <summary>
         /// 编号
         /// </summary>

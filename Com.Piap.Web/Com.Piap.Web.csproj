@@ -401,7 +401,7 @@
     <Content Include="Content\kendostyle\images\kendoui.woff" />
     <Content Include="Areas\IndexManage\Views\Classification\Index.cshtml" />
     <Content Include="Areas\IndexManage\Views\Category\Index.cshtml" />
-    <Content Include="Areas\IndexManage\Views\Index\Index.cshtml" />
+    <Content Include="Areas\IndexManage\Views\Indexs\Index.cshtml" />
     <Content Include="Areas\OrgStructure\Views\web.config" />
     <Content Include="Areas\OrgStructure\Views\User\Index.cshtml" />
     <Content Include="Areas\OrgStructure\Views\Dept\Index.cshtml" />

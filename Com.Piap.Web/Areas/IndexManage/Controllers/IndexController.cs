@@ -11,7 +11,7 @@ using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
 
 namespace Com.Piap.Web.Areas.IndexManage.Controllers {
-    public class IndexController : Controller {
+    public class IndexsController : Controller {
         public IService.IIndexService indexService = new Service.IndexService();
         //
         // GET: /IndexManage/Index/
@@ -25,7 +25,7 @@ namespace Com.Piap.Web.Areas.IndexManage.Controllers {
         /// <param name="request"></param>
         /// <returns></returns>
         public JsonResult All([DataSourceRequest]DataSourceRequest request) {
-            List<Model.Index> list = indexService.GetAll();
+            List<Model.Indexs> list = indexService.GetAll();
             return Json(list.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
@@ -38,7 +38,7 @@ namespace Com.Piap.Web.Areas.IndexManage.Controllers {
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Create(
             [DataSourceRequest] DataSourceRequest request,
-            [Bind(Prefix = "models")]IEnumerable<Model.Index> indexs) {
+            [Bind(Prefix = "models")]IEnumerable<Model.Indexs> indexs) {
                 if (indexs != null && ModelState.IsValid) {
                     foreach (var index in indexs) {
                         indexService.Create(index);
@@ -54,7 +54,7 @@ namespace Com.Piap.Web.Areas.IndexManage.Controllers {
         /// <param name="directions"></param>
         /// <returns></returns>
         public ActionResult Remove([DataSourceRequest] DataSourceRequest request,
-            [Bind(Prefix = "models")]IEnumerable<Model.Index> indexs) {
+            [Bind(Prefix = "models")]IEnumerable<Model.Indexs> indexs) {
                 if (indexs != null && ModelState.IsValid) {
                     foreach (var index in indexs) {
                         indexService.Remove(index);
@@ -70,7 +70,7 @@ namespace Com.Piap.Web.Areas.IndexManage.Controllers {
         /// <param name="directions"></param>
         /// <returns></returns>
         public ActionResult Delete([DataSourceRequest] DataSourceRequest request,
-            [Bind(Prefix = "models")]IEnumerable<Model.Index> indexs) {
+            [Bind(Prefix = "models")]IEnumerable<Model.Indexs> indexs) {
                 if (indexs != null && ModelState.IsValid) {
                     foreach (var index in indexs) {
                         indexService.Delete(index);
@@ -86,7 +86,7 @@ namespace Com.Piap.Web.Areas.IndexManage.Controllers {
         /// <param name="directions"></param>
         /// <returns></returns>
         public ActionResult Modify([DataSourceRequest] DataSourceRequest request,
-            [Bind(Prefix = "models")]IEnumerable<Model.Index> indexs) {
+            [Bind(Prefix = "models")]IEnumerable<Model.Indexs> indexs) {
                 if (indexs != null && ModelState.IsValid) {
                     foreach (var index in indexs) {
                         indexService.Modify(index);
