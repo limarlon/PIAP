@@ -36,7 +36,9 @@ namespace Com.Piap.IndexManage.Service {
         public bool Remove(Direction direction) {
             return persist.Remove(direction);
         }
-
+        public bool Delete(Direction direction) {
+            return persist.Delete(direction);
+        }
 
         public Direction GetByCode(string code) {
             return persist.GetByCode(code);
