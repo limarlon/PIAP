@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>数据迁移</title>
+    <link href="~/Content/kendostyle/kendo.common.min.css" rel="stylesheet">
+    <link href="~/Content/kendostyle/kendo.rtl.min.css" rel="stylesheet">
+    <link href="~/Content/kendostyle/kendo.default.min.css" rel="stylesheet">
+
+    <script src="~/Scripts/kendoui/jquery.min.js"></script>
+    <script src="~/Scripts/kendoui/kendo.web.min.js"></script>
+    <script src="~/Scripts/kendoui/kendo.aspnetmvc.min.js"></script>
+    <style>
+        *{
+            margin:0 auto;
+            padding:3px;
+        }
+        a, a:link {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("span").kendoButton();
+        });
+    </script>
+</head>
+<body>
+    <div style="width:360px; height:180px; margin-top:100px;"> 
+        <h1>数据迁移</h1>
+        <br />
+        <span><a href="@Url.Action("DataImport","Migrate")">数据导入</a></span>
+        <span><a href="#">数据导出</a></span>
+        <span><a href="#">模板下载</a></span>
+
+    </div>
+</body>
+</html>

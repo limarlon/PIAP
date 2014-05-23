@@ -10,7 +10,7 @@ namespace Com.Piap.IndexManage.Model {
     /// </summary>
     public class IndexInstance {
         /// <summary>
-        /// 
+        /// 编号
         /// </summary>
         public string Id { set; get; }
         /// <summary>
@@ -18,12 +18,16 @@ namespace Com.Piap.IndexManage.Model {
         /// </summary>
         public string Code { set; get; }
         /// <summary>
-        /// 时间
+        /// 时间点
         /// </summary>
         public string Time { set; get; }
         /// <summary>
         /// 指标值
         /// </summary>
         public Decimal Value { set; get; }
+        /// <summary>
+        /// 备注
+        /// </summary>
+        public string Remarks { set; get; }
     }
 }

@@ -119,6 +119,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\DataMigration\Models\" />
+    <Folder Include="Areas\DataMigration\Views\Shared\" />
     <Folder Include="Areas\IndexManage\Models\" />
     <Folder Include="Areas\IndexManage\Views\Shared\" />
     <Folder Include="Areas\OrgStructure\Models\" />
@@ -130,6 +132,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\DataMigration\Controllers\MigrateController.cs" />
+    <Compile Include="Areas\DataMigration\DataMigrationAreaRegistration.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
     <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
@@ -148,6 +152,7 @@
     <Compile Include="Areas\IndexManage\Controllers\ClassificationController.cs" />
     <Compile Include="Areas\IndexManage\Controllers\DirectionController.cs" />
     <Compile Include="Areas\IndexManage\Controllers\IndexController.cs" />
+    <Compile Include="Areas\IndexManage\Controllers\IndexInstanceController.cs" />
     <Compile Include="Areas\IndexManage\IndexManageAreaRegistration.cs" />
     <Compile Include="Areas\OrgStructure\Controllers\DeptController.cs" />
     <Compile Include="Areas\OrgStructure\Controllers\UserController.cs" />
@@ -405,6 +410,10 @@
     <Content Include="Areas\OrgStructure\Views\web.config" />
     <Content Include="Areas\OrgStructure\Views\User\Index.cshtml" />
     <Content Include="Areas\OrgStructure\Views\Dept\Index.cshtml" />
+    <Content Include="Areas\IndexManage\Views\IndexInstance\Index.cshtml" />
+    <Content Include="Areas\DataMigration\Views\web.config" />
+    <Content Include="Areas\DataMigration\Views\Migrate\Index.cshtml" />
+    <Content Include="Areas\DataMigration\Views\Migrate\DataImport.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
