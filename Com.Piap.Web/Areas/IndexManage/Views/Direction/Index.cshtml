@@ -30,7 +30,7 @@
     .Name("grid")
     .HtmlAttributes(new { style = "height: 500px; width:960px;margin-top:30px;" })
     .Columns(columns => {
-        columns.Bound(p => p.Id).Width(100).Title("编号");
+        columns.Bound(p => p.Id).Width(100).Title("编号").Hidden();
         columns.Bound(p => p.Code).Width(120).Title("代码");
         columns.Bound(p => p.Name).Width(180).Title("名称");
         columns.Bound(p => p.Remarks).Width(210).Title("备注");

@@ -29,7 +29,7 @@
     .Name("grid")
     .HtmlAttributes(new { style = "height: 500px; width:1000px;margin-top:30px;" })
     .Columns(columns => {
-        columns.Bound(p => p.Id).Width(100).Title("编号");
+        columns.Bound(p => p.Id).Width(100).Title("编号").Hidden();
         columns.Bound(p => p.Code).Width(100).Title("代码");
         columns.Bound(p => p.Name).Width(120).Title("名称");
         columns.Bound(p => p.DirectionId).Width(120).Title("分类方向");

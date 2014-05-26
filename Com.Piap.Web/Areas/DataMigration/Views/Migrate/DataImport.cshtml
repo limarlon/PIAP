@@ -31,20 +31,33 @@
 <body>
     <div style="width:360px; height:180px; margin-top:100px;">
         <h1>数据导入</h1>
-        <form method="post" action="@Url.Action("Submit","Migrate")" >
+        <select id="importtype">
+            <option value="@Url.Action("ImportClassification", "Migrate")">指标分类</option>
+            <option value="@Url.Action("ImportCategory", "Migrate")">指标类目</option>
+            <option value="@Url.Action("ImportIndexs", "Migrate")">指标定义</option>
+            <option value="@Url.Action("ImportIndexValue", "Migrate")">源指标值</option>
+        </select>
+        <form method="post" action="@Url.Action("ImportClassification", "Migrate")">
             <div>
                 <input name="files" id="files" type="file" />
                 <input type="submit" value="上传" class="k-button" />
             </div>
         </form>
-        <script>
-            $(document).ready(function () {
-                $("#files").kendoUpload();
-            });
-        </script>
+            <script>
+                $(document).ready(function () {
+                    $("#files").kendoUpload();
+                    $("#importtype").kendoDropDownList({
+                        change: onChange
+                    });
+                });
+
+                function onChange() {
+                    $("form").attr("action", $("#importtype").val());
+                }
+            </script>
 
 
 
-    </div>
+</div>
 </body>
 </html>

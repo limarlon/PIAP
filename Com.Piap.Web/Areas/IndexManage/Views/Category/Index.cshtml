@@ -29,12 +29,12 @@
     .Name("grid")
     .HtmlAttributes(new { style = "height: 500px; width:1000px;margin-top:30px;" })
     .Columns(columns => {
-        columns.Bound(p => p.Id).Width(100).Title("编号");
+        columns.Bound(p => p.Id).Width(100).Title("编号").Hidden();
         columns.Bound(p => p.Code).Width(100).Title("代码");
-        columns.Bound(p => p.Name).Width(120).Title("名称");
+        columns.Bound(p => p.Name).Width(150).Title("名称");
         columns.Bound(p => p.DirectionId).Width(120).Title("分类方向");
         columns.Bound(p => p.ClassificationId).Width(120).Title("分类");
-        columns.Bound(p => p.Remarks).Width(120).Title("备注");
+        columns.Bound(p => p.Remarks).Width(160).Title("备注");
         columns.Bound(p => p.Enable).Width(100).Title("启停");
         columns.Bound(p => p.Deleted).Width(100).Title("删除");
         columns.Command(command => command.Destroy());
